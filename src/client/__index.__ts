@@ -1,0 +1,18 @@
+import ws from 'ws';
+
+let sock1 = new WebSocket('ws://localhost:8999');
+let sock2 = new WebSocket('ws://localhost:8999');
+let sock3 = new WebSocket('ws://localhost:8999');
+
+sock1.onmessage = message => {
+  console.log(`Connection 1: ${message.data}`);
+};
+
+sock2.onmessage = message => {
+  console.log(`Connection 2: ${message.data}`);
+};
+
+sock3.onmessage = message => {
+  console.log(`Connection 3: ${message.data}`);
+};
+
