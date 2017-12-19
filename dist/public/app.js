@@ -22,7 +22,7 @@ class Utility {
   }
 }
 
-let Lobby = (function (_props) {
+let Lobby = function (_props) {
   let socket = new WebSocket('ws://localhost:8999');
 
   console.log('Connecting...');
@@ -113,21 +113,18 @@ let Lobby = (function (_props) {
   });
 
   window.onunload = event => {
-    socket.close();
+    this.closeConnection(event);
   };
-});
+};
 
 const utility = new Utility();
 
 connOpen.addEventListener('click', e => {
-  if (CONN == 0) {
-    app = new Lobby();
+  if (WebSocket.CLOSED) {
+    app = Lobby();
   }
   else {
     console.error('Connection already made.');
   }
 });
 
-window.closeit = () => {
-  app.closeConnection();
-}
