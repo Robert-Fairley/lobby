@@ -1,0 +1,140 @@
+body, html {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif; /*, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
+  margin: 0;
+  padding: 0;
+  font-weight: 200;
+}
+
+.header {
+  margin: 0.5em;
+}
+
+.header > h1 {
+  font-weight: 200;
+}
+
+.toolbar {
+  background-color: #333;
+  color: #eee;
+}
+
+.toolbar__top {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+}
+.toolbar__left {
+  display: flex;
+  align-items: center;
+}
+.toolbar__right {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  border-bottom-left-radius: 10px;
+}
+
+.toolbar__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  height: 40px;
+}
+.toolbar__bottom #connInput {
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  margin: 0;
+}
+.toolbar__bottom #connInput input {
+  height: 100%;
+  width: 30%;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 100;
+  background-color: rgba(242, 248, 245, 0.05);
+  color: #dedede;
+  padding-left: 1em;
+  padding-right: 1em;
+
+  transition: all ease 400ms;
+}
+
+.toolbar__bottom #connInput input:focus {
+  width: 80%;
+  outline: 0;
+  background-color: rgba(242, 248, 245, 0.2);
+}
+.toolbar__bottom #connInput button {
+  height: 100%;
+}
+.toolbar__button {
+  height: 100%;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  font-size: 0.85em;
+  background-color: transparent;
+  color: #dedede;
+
+  will-change: all;
+  transition: all 200ms ease;
+}
+.toolbar__button:hover {
+  color: rgba(242, 248, 245, 1);
+  background-color: rgba(242, 248, 245, 0.07);
+}
+.toolbar__button:active {
+  background-color: rgba(235, 243, 240, 0.15);
+}
+.toolbar__button:focus {
+  outline: 0;
+  border: 1px solid rgba(242, 248, 245, 0.2);
+}
+
+.connect-label {
+  will-change: content, color, background-color;
+  box-sizing: border-box;
+  background-color: rgba(106, 106, 106, 0.2);
+  font-weight: 400;
+  width:142px;
+  transition: color 200ms ease, content 200ms ease, background-color 200ms ease;
+}
+
+.connect-label.connected {
+  color: #6faf0d;
+  background-color: rgba(106, 106, 106, 0.6);
+}
+.connect-label.connected:before {
+  content: '\2713 \00a0\00a0\00a0\00a0 Connected';
+}
+
+.connect-label.disconnected {
+  color: #d34a35;
+}
+.connect-label.connect-label.disconnected:before {
+  content: '\2717  Disconnected';
+}
+
+.container__response {
+  margin: 0.5em;
+}
+
+.output {
+  max-height: 300px;
+  overflow-x: hidden;
+}
+
+.message__server {
+  color: rgb(50, 94, 129);
+  margin: 0.25em;
+}
+
+.message__user {
+  margin: 0.25em;
+}
